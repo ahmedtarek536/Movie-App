@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tvflix</title>
+    <meta name="title"  content="Tvflix">
+    <meta name="description" content="Tvflix is a popular movie app made by codewithsadee.">
+
+ <!-- favicon  -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+ <!-- file google font  --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+ <!-- file font awsome  -->
+<link rel="stylesheet" href="assets/css/all.min.css">
+ <!-- file css  -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+ <!-- custom js link  -->
+    <script src="./assets/js/global.js" defer> </script>
+    <script src="./assets/js/movie-list.js" ></script>
+</head>
+
+<body >
+
+    <!-- Header  -->
+    <header class="header">
+        <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="140" height="32"  alt=" Tvflix home">
+        </a>
+
+        <div class="search-box " search-box>
+            <div class="search-wrapper " search-wrapper>
+                <input type="text" onkeyup="searchField(this.value)" name="search" autocomplete="off" aria-label ="search movies" placeholder=" Search any movies..." class="search-field" search-field>
+                <img src="assets/images/search.png"  width="24" height="24" alt="search" class="leading-icon">
+            </div>
+
+            <button class="search-btn" search-toggler>
+                <img src="./assets/images/close.png" width="24" height="24" alt="close search box">
+            </button>
+        </div>
+
+        <button class="search-btn" search-toggler menu-close>
+            <img src="./assets/images/search.png" width="24" height="24" alt="open search box">
+        </button>
+
+
+        <button class="menu-btn " menu-btn menu-toggler>
+            <img src="./assets/images/menu.png" width="24" height="24" alt="open menu" class="menu">
+            <img src="./assets/images/menu-close.png" width="24" height="24" alt="close menu" class="close">
+        </button>
+    
+
+
+
+    </header>
+
+
+
+
+
+ 
+
+ <!-- Sidebar -->
+ <nav class="sidebar" sidebar>
+    <div class="sidebar-inner">
+        <div class="sidebar-list">
+          <a href="./index.html"> <button class="title"><i class="fa-solid fa-house home"></i> Home</button> </a>
+        </div>
+        <div class="sidebar-list">
+           <button class="title"><i class="fa-solid fa-video movice"></i> Movies</button>
+        </div>
+        <div class="sidebar-list">
+            <p class="title">Categorie</p>
+            <div  menu-close class="sidebar-link" value="popular" onclick="addMovielist('popular')" >Popular</div>
+            <div  menu-close class="sidebar-link" value="top_rated" onclick="addMovielist('top_rated')" >Top Rated</div>
+            <div  menu-close class="sidebar-link" value="now_playing" onclick="addMovielist('now_playing')" >Now Playing</div>
+            <div  menu-close class="sidebar-link" value="upcoming" onclick="addMovielist('upcoming')" >UpComing</div>
+        </div>
+
+        <div class="sidebar-list" id="genre">
+
+            <p class="title">Genre</p>
+            <div class="box">
+
+            </div>
+        </div>
+
+        
+        <div class="sidebar-list" id="genre">
+            <p class="title">Countrey</p>
+            <div class="box">
+                <div  menu-close class="sidebar-link" value="popular" onclick="addCountreylist('en' , 'US')" >American</div>
+                <div  menu-close class="sidebar-link" value="top_rated" onclick="addCountreylist('ar', 'EG')" >Egypt</div>
+                <div  menu-close class="sidebar-link" value="now_playing" onclick="addCountreylist('ar' , '')" > Arabia</div>
+                <div  menu-close class="sidebar-link" value="upcoming" onclick="addCountreylist('hi' , 'IN')" >India</div>
+                <div  menu-close class="sidebar-link" value="upcoming" onclick="addCountreylist('es' , 'ES')" >Spain</div>
+                <div  menu-close class="sidebar-link" value="upcoming" onclick="addCountreylist('de' , 'DE')" >German</div>
+            </div>
+        </div>
+
+        
+
+        <div class="sidebar-footer">
+            <p class="copyright">Made By <span>Roney</span></p>
+        </div>
+
+    </div>
+</nav>
+
+<div class="overlay " overlay menu-toggler></div>
+
+
+
+
+<div class="contentAll">
+   
+
+
+<article class="container" page-content>
+    <div class="fakeContentSearch">
+
+
+
+
+
+    <h2 class="title-categorie" id="mainTitle" style="margin-top: 0px;">Movies</h2>
+    <section class="movies-list" id="popular">
+    
+        <!-- <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light ahmed tarek</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>
+        <div class="weekly-item">
+            <img src="./assets/images/slider-control.jpg" alt="">
+            <h2 class="title">Empir of Light</h2>
+            <div class="weekly-info">
+                <div class="rating"><i class="fa-solid fa-star" style="color: #fbff00;"></i> <span>7.8</span></div>
+                <div class="historey"> 2023</div>
+            </div>
+        </div>  -->
+
+    </section>
+    <button class="show-more" onclick="addmore()">Show More</button>
+
+
+    </div>
+<div id="searchContainer">
+</div>
+</article>
+
+
+</div>
+   
+
+
+
+
+</body>
+</html>
